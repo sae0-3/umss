@@ -1,4 +1,4 @@
-package builder;
+package domain.model;
 
 public enum UserRole {
   ADMIN,

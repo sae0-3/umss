@@ -1,8 +1,8 @@
-package strategy;
+package domain.service.strategy;
 
 import java.util.Map;
 
-import builder.User;
+import domain.model.User;
 
 public class NoVerificationAuthentication implements AuthenticationStrategy {
   @Override

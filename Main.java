@@ -1,9 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import adapter.*;
-import builder.*;
-import strategy.*;
+import infrastructure.adapter.*;
+import domain.model.*;
+import domain.service.*;
+import domain.service.strategy.*;
 
 public class Main {
   public static void main(String[] args) {

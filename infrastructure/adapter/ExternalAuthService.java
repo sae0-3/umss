@@ -1,4 +1,4 @@
-package adapter;
+package infrastructure.adapter;
 
 public class ExternalAuthService {
   public boolean checkCredentials(String email, String secret) {

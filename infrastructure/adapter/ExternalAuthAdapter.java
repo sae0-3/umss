@@ -1,9 +1,9 @@
-package adapter;
+package infrastructure.adapter;
 
 import java.util.Map;
 
-import builder.User;
-import strategy.AuthenticationStrategy;
+import domain.model.User;
+import domain.service.strategy.AuthenticationStrategy;
 
 public class ExternalAuthAdapter implements AuthenticationStrategy {
   private ExternalAuthService service;

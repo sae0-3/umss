@@ -1,8 +1,9 @@
-package strategy;
+package domain.service;
 
 import java.util.Map;
 
-import builder.User;
+import domain.model.User;
+import domain.service.strategy.AuthenticationStrategy;
 
 public class AuthenticationContext {
   private AuthenticationStrategy strategy;

@@ -1,4 +1,4 @@
-package builder;
+package domain.model;
 
 public class UserBuilder {
   private final User user = new User();
