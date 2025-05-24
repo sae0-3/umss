@@ -66,6 +66,7 @@ public class User {
         ", email='" + email + '\'' +
         ", role=" + role +
         ", verified=" + verified +
+        ", password=" + password +
         '}';
   }
 }

@@ -6,7 +6,7 @@ import domain.model.User;
 import domain.service.strategy.AuthenticationStrategy;
 
 public class ExternalAuthAdapter implements AuthenticationStrategy {
-  private ExternalAuthService service;
+  private ExternalAuthProvider service;
 
   public ExternalAuthAdapter(ExternalAuthService service) {
     this.service = service;
