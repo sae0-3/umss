@@ -1,5 +1,3 @@
-require 'benchmark'
-require 'objspace'
 require 'benchmark/memory'
 
 class MergeSort
@@ -14,7 +12,8 @@ class MergeSort
   private
 
   def merge_sort(arr)
-    return arr if arr.size <= 1
+    return arr.dup if arr.size <= 1
+
     mid = arr.size / 2
     left = merge_sort(arr[0...mid])
     right = merge_sort(arr[mid..-1])
@@ -30,21 +29,17 @@ class MergeSort
   end
 end
 
-# Leer archivo
 linea = File.read("numeros.txt")
 arr = linea.strip.split(",").map(&:to_i)
 
-# Medir tiempo de ejecución
-tiempo = Benchmark.realtime do
-  sorter = MergeSort.new(arr)
-  sorter.sort
-end
-
-puts "\nTiempo de ejecución del algoritmo: #{tiempo.round(6)} segundos"
-puts "\nReporte detallado de uso de memoria con benchmark-memory:"
 Benchmark.memory do |x|
-  x.report("Merge Sort") do
+  x.report("MergeSort") do
+    start_time = Process.clock_gettime(Process::CLOCK_MONOTONIC)
     sorter = MergeSort.new(arr)
-    sorter.sort
+    result = sorter.sort
+    end_time = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+
+    duration_ms = (end_time - start_time) * 1000.0
+    puts "\nTiempo de ejecución del algoritmo: #{duration_ms.round(3)} ms"
   end
 end
